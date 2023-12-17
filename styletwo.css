@@ -1,0 +1,77 @@
+
+.Sounder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 81vh;
+}
+
+.music-container {
+    background-color:white;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    transition: height 0.2s;
+    border: 1px solid rgb(182, 184, 182);
+    box-shadow: 1px 1px 10px -5px;
+}
+
+.Sounder .img-container img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.play-pause {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.play-pause i {
+    line-height: 40px;
+}
+
+.progress-container {
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #007BFF;
+    border-radius: 20px;
+    transition: width 0.1s;
+}
+
+.song-info {
+    margin-top: 10px;
+}
+
+/* Hover effect for the play-pause button */
+.play-pause:hover {
+    background-color: #0056b3;
+}

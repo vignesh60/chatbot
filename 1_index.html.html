@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar using HTML, CSS and Javascript</title>
+    <link rel="stylesheet" href="style2.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styletwo.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="icon" href="logo.png">
+
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <img src="chatbotlogo.png" alt="">
+        </div>
+        <h3>Chat Bot</h3>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav id="nav">
+            <div class="logo">
+                <img src="chatbotlogo.png" alt="">
+            </div>
+            <ul id="Ul">
+                <div id="hr"></div>
+                <li>
+                    <button id="btn1" onclick="openHTML()" style="background: #0b2239;">Home</button>
+                </li>
+                <li>
+                    <button id="btn2" onclick="openCSS()">Wallpapers</button>
+                </li>
+                <li>
+                    <button id="btn3" onclick="openJAVA()">Songs</button>
+                </li>
+                <div id="hr"></div>
+                <li >
+                    <div class="dark-mode">
+                        <span class="material-icons-sharp active">
+                            Light
+                        </span>
+                        <span class="material-icons-sharp">
+                            Dark
+                        </span>
+                    </div>
+                </li>
+                <li id="login">
+                    <a href="#" onclick="openprofile()"><img src="person4.jpeg"></a>
+                </li>
+            </ul>
+            <!--<div class="login-signup">
+                    <a href="">Login</a> or <a href="">Signup</a>
+                </div>-->
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <div class="container" id="container">
+        <div class="hero">
+            <!--<div class="btn-box">
+                <button id="btn1" onclick="openHTML()">HTML</button>
+                <button id="btn2" onclick="openCSS()">CSS</button>
+                <button id="btn3" onclick="openJAVA()">JAVASRIPT</button>
+            </div>-->
+            <div id="content1" class="content5">
+                <div class="content-left-right">
+                    <div id="loading-container1">
+                        <div id="loading-spinner1"></div>
+                    </div>
+                    <div class="chat-header">
+                        <h2>CHAT BOT</h2>
+                    </div>
+                    <div class="chat-box" id="chat-box">
+                        <!-- Chat messages will be displayed here -->
+                    </div>
+                    
+                    <div class="chat-input">
+                        <img class="image" src="boyimage.jpeg">
+                        <input type="text" id="user-input" placeholder="Type your response..." required>
+                        <button id="generateButton" type="button" class="btn5"><ion-icon name="send-sharp"></ion-icon></button>
+                    </div>
+                    <audio id="sendSound">
+                        <source src="pop-up-something-160353.mp3" type="audio/mpeg">
+                        <!-- Replace with your sound file -->
+                        Your browser does not support the audio element.
+                    </audio>
+
+
+                </div>
+                <!--div class="content-right">
+                    <img src="7.jpg">
+                </div>-->
+            </div>
+            <div id="content2" class="content4">
+                <div class="searchhead">
+                    <form id="search-form">
+                        <input type="text" id="search-input" placeholder="Enter your search keyword">
+                        <button type="submit" onclick="changeImg()">Search</button>
+                    </form>
+                    <div id="loading-container">
+                        <div id="loading-spinner"></div>
+                    </div>
+                    <div class="full-img" id="fullImgBox">
+                        <img src="img4.jpg" id="fullImg">
+                        <div class="sp" onclick="closeFullImg()">X</div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div id="image-results"></div>
+                    <div id="closeimg">
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(23).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(23).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper (5).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(5).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(14).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(14).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(22).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(22).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(34).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(34).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(38).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(38).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(4).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(4).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(40).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(40).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(41).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(41).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="spiderman (3).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="spiderman (3).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="spiderman (4).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="spiderman (4).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(43).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(43).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img1.png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img1.png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img2.png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img2.png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img3.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img3.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img4.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img4.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img5.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img5.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="Kakashi.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="Kakashi.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="spiderman (7).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="spiderman (7).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9070086.png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9070086.png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9070125.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9070125.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9070161.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9070161.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9070206.png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9070206.png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9070201.png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9070201.png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9070152.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9070152.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="spiderman (1).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="spiderman (1).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="itachi.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="itachi.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="Screenshot (12).png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="Screenshot (12).png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="spiderman (2).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="spiderman (2).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="back.jpeg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="back.jpeg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper (2).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper (2).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper (5).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper (5).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(6).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(6).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(8).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(8).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(9).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(9).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(10).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(10).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(13).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(13).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(16).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(16).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(17).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(17).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(18).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(18).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(20).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(20).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(25).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(25).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(27).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(27).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(30).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(30).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(35).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(35).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="wallpaperflare.com_wallpaper(45).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="wallpaperflare.com_wallpaper(45).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="omen.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="omen.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (1).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (1).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (1).png" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (1).png" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (3).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (3).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (4).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (4).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (5).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (5).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (6).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (6).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (8).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (8).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (9).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (9).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (10).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (10).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="img (11).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="img (11).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="omen-1.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="omen-1.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="7.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="7.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="8.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="8.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="9.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="9.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="10.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="10.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="12.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="12.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                        <div class="image-container">
+                            <img src="14.jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="14.jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+                       
+                        <div class="image-container">
+                            <img src="spiderman (6).jpg" onclick="openFullImg(this.src)">
+                            <a class="download-link" href="spiderman (6).jpg" download>
+                                <button class="download-button">Download</button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div id="content3" class="content">
+                <div class="Sounder" id="Sounder">
+                    <div class="music-container" id="music-container1" hidden>
+                        <div class="img-container">
+                            <img src="vikram2.avif" alt="cover">
+                        </div>
+                        <h4 class="title">Song 1</h4>
+                        <p>Pathala Pathala Lyric Kamal Haasan Vijay Sethupathi Lokesh Kanagaraj Anirudh</p>
+                        <div class="navigation">
+                            <button class="play" id="play1">
+                                <i class="fa fa-play" aria-hidden="true"></i>
+                            </button>
+                            <div class="music-info">
+                                <div class="progress-container" id="progress-container1">
+                                    <div class="progress" id="progress1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content6" class="content">
+                <div class="content-left">
+                    <form>
+                        <h1>Sign Up</h1>
+                        <table>
+                            <tr>
+                                <td><ion-icon name="person-circle-outline" style="font-size: 30px;"></ion-icon></td>
+                                <td><input type="text" required placeholder="User Name"></td>
+                            </tr>
+                            <tr>
+                                <td><ion-icon name="mail-outline" style="font-size: 30px;"></ion-icon></td>
+                                <td><input type="email" required placeholder="e-mail"></td>
+                            </tr>
+                            <tr>
+                                <td><ion-icon name="eye-outline" style="font-size: 30px;"></ion-icon></td>
+                                <td><input type="password" required placeholder="password"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td ><input type="Submit" class="btn6" value="Submit"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="swap.js"></script>
+    <script src="script.js"></script>
+    <script src="imagescript.js"></script>
+    <script src="song.js"></script>
+</body>
+</body>
+
+</html>
